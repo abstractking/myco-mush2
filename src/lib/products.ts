@@ -1,3 +1,24 @@
+import IMG_7962 from "@/assets/product-cards/IMG_7962.jpeg";
+import IMG_7963 from "@/assets/product-cards/IMG_7963.jpeg";
+import IMG_7964 from "@/assets/product-cards/IMG_7964.jpeg";
+import IMG_7965 from "@/assets/product-cards/IMG_7965.jpeg";
+import IMG_7967 from "@/assets/product-cards/IMG_7967.jpeg";
+import IMG_7967_1 from "@/assets/product-cards/IMG_7967_1.jpeg";
+import IMG_7968 from "@/assets/product-cards/IMG_7968.jpeg";
+import IMG_7969 from "@/assets/product-cards/IMG_7969.jpeg";
+import IMG_7969_1 from "@/assets/product-cards/IMG_7969_1.jpeg";
+import IMG_7970 from "@/assets/product-cards/IMG_7970.jpeg";
+import IMG_7970_1 from "@/assets/product-cards/IMG_7970_1.jpeg";
+import IMG_7971 from "@/assets/product-cards/IMG_7971.jpeg";
+import IMG_7971_1 from "@/assets/product-cards/IMG_7971_1.jpeg";
+import IMG_7972 from "@/assets/product-cards/IMG_7972.jpeg";
+import IMG_7973 from "@/assets/product-cards/IMG_7973.jpeg";
+import IMG_7974 from "@/assets/product-cards/IMG_7974.jpeg";
+import IMG_7975 from "@/assets/product-cards/IMG_7975.jpeg";
+import IMG_7976 from "@/assets/product-cards/IMG_7976.jpeg";
+import IMG_7977 from "@/assets/product-cards/IMG_7977.jpeg";
+import IMG_7978 from "@/assets/product-cards/IMG_7978.jpeg";
+
 export type Product = {
   id: string;
   code: string;
@@ -7,32 +28,28 @@ export type Product = {
   image: string;
 };
 
-const PRODUCT_IMAGE_FILES = [
-  "IMG_7962.jpeg",
-  "IMG_7963.jpeg",
-  "IMG_7964.jpeg",
-  "IMG_7965.jpeg",
-  "IMG_7967.jpeg",
-  "IMG_7967_1.jpeg",
-  "IMG_7968.jpeg",
-  "IMG_7969.jpeg",
-  "IMG_7969_1.jpeg",
-  "IMG_7970.jpeg",
-  "IMG_7970_1.jpeg",
-  "IMG_7971.jpeg",
-  "IMG_7971_1.jpeg",
-  "IMG_7972.jpeg",
-  "IMG_7973.jpeg",
-  "IMG_7974.jpeg",
-  "IMG_7975.jpeg",
-  "IMG_7976.jpeg",
-  "IMG_7977.jpeg",
-  "IMG_7978.jpeg",
+const PRODUCT_IMAGES = [
+  IMG_7962,
+  IMG_7963,
+  IMG_7964,
+  IMG_7965,
+  IMG_7967,
+  IMG_7967_1,
+  IMG_7968,
+  IMG_7969,
+  IMG_7969_1,
+  IMG_7970,
+  IMG_7970_1,
+  IMG_7971,
+  IMG_7971_1,
+  IMG_7972,
+  IMG_7973,
+  IMG_7974,
+  IMG_7975,
+  IMG_7976,
+  IMG_7977,
+  IMG_7978,
 ];
-
-const PRODUCT_IMAGES = PRODUCT_IMAGE_FILES.map((filename) =>
-  new URL(`../assets/product-cards/${filename}`, import.meta.url).href,
-);
 
 const prefixes = [
   "Spore", "Neon", "Astral", "Void", "Lucid", "Solar", "Ember", "Glyph",
