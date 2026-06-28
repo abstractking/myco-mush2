@@ -54,7 +54,7 @@ function CartPage() {
   const [buyerBtc, setBuyerBtc] = useState("");
   const [notes, setNotes] = useState("");
   const [strain, setStrain] = useState(STRAIN_OPTIONS[0]);
-  const isMw010 = selectedProduct.id === "MW-010";
+  const hasStrainOptions = Boolean(selectedProduct.prices);
 
   const total = (unitPrice * qty).toFixed(2);
 
@@ -63,7 +63,7 @@ function CartPage() {
     `Qty: ${qty}`,
     `Unit: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
     `Total: $${total}`,
-    ...(isMw010 ? [`Strain: ${strain}`] : []),
+    ...(hasStrainOptions ? [`Strain: ${strain}`] : []),
     ``,
     `Customer email: ${email}`,
     `Customer BTC (tracking): ${buyerBtc}`,
@@ -188,7 +188,7 @@ function CartPage() {
               placeholder="bc1q..."
             />
 
-            {isMw010 ? (
+            {hasStrainOptions ? (
               <div>
                 <label className="block text-xs uppercase text-muted-foreground">
                   {"> strain:"}
