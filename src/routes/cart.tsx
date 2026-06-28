@@ -5,7 +5,7 @@ import { getProduct, PRODUCTS } from "@/lib/products";
 
 // TODO: replace with real values when ready.
 const BTC_PAYMENT_ADDRESS = "REPLACE_WITH_OWNER_BTC_ADDRESS";
-const OWNER_EMAIL = "biz.abstractkingdom@gmail.com";
+const OWNER_EMAIL = "mycowondarland@gmail.com";
 
 type Weight = "oz" | "quarter" | "half" | "pound";
 
