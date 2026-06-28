@@ -4,6 +4,7 @@ export type Product = {
   name: string;
   tag: string;
   price: number;
+  image: string;
 };
 
 const prefixes = [
@@ -43,6 +44,7 @@ export const PRODUCTS: Product[] = (() => {
       name: `${p} ${s}`,
       tag: t,
       price,
+      image: `/${String(i + 10).padStart(3, "0")}.jpg`,
     });
   }
   return list;
