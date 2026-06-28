@@ -14,6 +14,23 @@ const searchSchema = z.object({
   weight: z.enum(["oz", "quarter", "half", "pound"]).optional(),
 });
 
+// Replace these placeholder names with the 14 MW-010 strains when ready.
+const STRAIN_OPTIONS = [
+  "Jack Frost",
+  "P.E",
+  "Hillbilly",
+  "Gourmet",
+  "A.P.E",
+  "Golden Teacher",
+  "Blue Meanie",
+  "Cubensis",
+  "B+",
+  "Devil's Cap",
+  "Trinity Caps",
+  "Mazatepecs",
+  "Bluey Vuitton",
+  "Yeti",
+ ];
 export const Route = createFileRoute("/cart")({
   validateSearch: searchSchema,
   head: () => ({
@@ -30,12 +47,14 @@ function CartPage() {
   const product = useMemo(() => (item ? getProduct(item) : undefined), [item]);
   const selectedProduct = product ?? PRODUCTS[0];
   const selectedWeight = selectedProduct.prices ? ((weight ?? "oz") as Weight) : undefined;
-  const unitPrice = selectedWeight ? selectedProduct.prices[selectedWeight] : selectedProduct.price;
+  const unitPrice = selectedProduct.prices && selectedWeight ? selectedProduct.prices[selectedWeight] : selectedProduct.price;
 
   const [qty, setQty] = useState(1);
   const [email, setEmail] = useState("");
   const [buyerBtc, setBuyerBtc] = useState("");
   const [notes, setNotes] = useState("");
+  const [strain, setStrain] = useState(STRAIN_OPTIONS[0]);
+  const isMw010 = selectedProduct.id === "MW-010";
 
   const total = (unitPrice * qty).toFixed(2);
 
@@ -44,6 +63,7 @@ function CartPage() {
     `Qty: ${qty}`,
     `Unit: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
     `Total: $${total}`,
+    ...(isMw010 ? [`Strain: ${strain}`] : []),
     ``,
     `Customer email: ${email}`,
     `Customer BTC (tracking): ${buyerBtc}`,
@@ -167,6 +187,25 @@ function CartPage() {
               required
               placeholder="bc1q..."
             />
+
+            {isMw010 ? (
+              <div>
+                <label className="block text-xs uppercase text-muted-foreground">
+                  {"> strain:"}
+                </label>
+                <select
+                  value={strain}
+                  onChange={(e) => setStrain(e.target.value)}
+                  className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm text-foreground outline-none transition focus:border-accent"
+                >
+                  {STRAIN_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            ) : null}
 
             <div>
               <label className="block text-xs uppercase text-muted-foreground">

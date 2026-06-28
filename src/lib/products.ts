@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
     name: "Shrmmz",
     tag: "focus",
     price: 42.5,
-    prices: { oz: 42.5, quarter: 170, half: 340, pound: 680 },
+    prices: { oz: 150, quarter: 350, half: 500, pound: 870 },
     image: IMG_7962,
   },
   {
