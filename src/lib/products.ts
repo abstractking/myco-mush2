@@ -7,6 +7,33 @@ export type Product = {
   image: string;
 };
 
+const PRODUCT_IMAGE_FILES = [
+  "IMG_7962.jpeg",
+  "IMG_7963.jpeg",
+  "IMG_7964.jpeg",
+  "IMG_7965.jpeg",
+  "IMG_7967.jpeg",
+  "IMG_7967_1.jpeg",
+  "IMG_7968.jpeg",
+  "IMG_7969.jpeg",
+  "IMG_7969_1.jpeg",
+  "IMG_7970.jpeg",
+  "IMG_7970_1.jpeg",
+  "IMG_7971.jpeg",
+  "IMG_7971_1.jpeg",
+  "IMG_7972.jpeg",
+  "IMG_7973.jpeg",
+  "IMG_7974.jpeg",
+  "IMG_7975.jpeg",
+  "IMG_7976.jpeg",
+  "IMG_7977.jpeg",
+  "IMG_7978.jpeg",
+];
+
+const PRODUCT_IMAGES = PRODUCT_IMAGE_FILES.map((filename) =>
+  new URL(`../assets/product-cards/${filename}`, import.meta.url).href,
+);
+
 const prefixes = [
   "Spore", "Neon", "Astral", "Void", "Lucid", "Solar", "Ember", "Glyph",
   "Mycel", "Wraith", "Echo", "Hollow", "Prism", "Static", "Drift", "Vapor",
@@ -44,7 +71,7 @@ export const PRODUCTS: Product[] = (() => {
       name: `${p} ${s}`,
       tag: t,
       price,
-      image: `/${String(i + 10).padStart(3, "0")}.jpg`,
+      image: PRODUCT_IMAGES[i % PRODUCT_IMAGES.length],
     });
   }
   return list;

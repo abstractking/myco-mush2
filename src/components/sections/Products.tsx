@@ -60,7 +60,14 @@ export function Products() {
                 maskImage: "radial-gradient(circle at center, black, transparent 70%)",
               }}
             />
-            <div className="relative flex aspect-[4/5] flex-col">
+            <div className="overflow-hidden rounded-[2rem] bg-slate-950">
+              <img
+                src={p.image}
+                alt={p.name}
+                className="h-56 w-full object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="relative flex flex-col p-6">
               <p className="font-mono-ui text-[10px] uppercase text-accent">{p.code}</p>
               <div className="mt-3 flex-1">
                 <h3 className="font-display text-2xl font-bold leading-tight">{p.name}</h3>
