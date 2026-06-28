@@ -7,8 +7,11 @@ import { getProduct, PRODUCTS } from "@/lib/products";
 const BTC_PAYMENT_ADDRESS = "REPLACE_WITH_OWNER_BTC_ADDRESS";
 const OWNER_EMAIL = "owner@example.com";
 
+type Weight = "oz" | "quarter" | "half" | "pound";
+
 const searchSchema = z.object({
   item: z.string().optional(),
+  weight: z.enum(["oz", "quarter", "half", "pound"]).optional(),
 });
 
 export const Route = createFileRoute("/cart")({
@@ -23,21 +26,23 @@ export const Route = createFileRoute("/cart")({
 });
 
 function CartPage() {
-  const { item } = Route.useSearch();
+  const { item, weight } = Route.useSearch();
   const product = useMemo(() => (item ? getProduct(item) : undefined), [item]);
-  const fallback = product ?? PRODUCTS[0];
+  const selectedProduct = product ?? PRODUCTS[0];
+  const selectedWeight = selectedProduct.prices ? ((weight ?? "oz") as Weight) : undefined;
+  const unitPrice = selectedWeight ? selectedProduct.prices[selectedWeight] : selectedProduct.price;
 
   const [qty, setQty] = useState(1);
   const [email, setEmail] = useState("");
   const [buyerBtc, setBuyerBtc] = useState("");
   const [notes, setNotes] = useState("");
 
-  const total = (fallback.price * qty).toFixed(2);
+  const total = (unitPrice * qty).toFixed(2);
 
   const orderSummary = [
-    `Order: ${fallback.code} — ${fallback.name}`,
+    `Order: ${selectedProduct.code} — ${selectedProduct.name}`,
     `Qty: ${qty}`,
-    `Unit: $${fallback.price.toFixed(2)}`,
+    `Unit: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
     `Total: $${total}`,
     ``,
     `Customer email: ${email}`,
@@ -51,7 +56,7 @@ function CartPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = `New order // ${fallback.code} — ${fallback.name}`;
+    const subject = `New order // ${selectedProduct.code} — ${selectedProduct.name}`;
     window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(orderSummary)}`;
   };
 
@@ -89,10 +94,10 @@ function CartPage() {
           {/* Order summary */}
           <aside className="space-y-6 rounded-2xl border border-border/60 bg-card/60 p-6">
             <div>
-              <p className="font-mono-ui text-[10px] uppercase text-accent">{fallback.code}</p>
-              <h2 className="font-display mt-2 text-2xl font-bold">{fallback.name}</h2>
+              <p className="font-mono-ui text-[10px] uppercase text-accent">{selectedProduct.code}</p>
+              <h2 className="font-display mt-2 text-2xl font-bold">{selectedProduct.name}</h2>
               <p className="font-mono-ui mt-1 text-[11px] uppercase text-muted-foreground">
-                // {fallback.tag}
+                // {selectedProduct.tag}
               </p>
             </div>
 

@@ -75,20 +75,49 @@ export function Products() {
                   // {p.tag}
                 </p>
               </div>
-              <div className="mt-6 flex items-end justify-between">
-                <p className="font-mono-ui text-[10px] uppercase text-muted-foreground/60">
-                  qty · 1
-                </p>
-                <Link
-                  to="/cart"
-                  search={{ item: p.id }}
-                  data-text={`$${p.price.toFixed(2)}`}
-                  className="glitch-btn text-xs"
-                  aria-label={`Buy ${p.name} for $${p.price.toFixed(2)}`}
-                >
-                  ${p.price.toFixed(2)}
-                </Link>
-              </div>
+              {p.prices ? (
+                <div className="mt-6 space-y-3">
+                  <p className="font-mono-ui text-[10px] uppercase text-muted-foreground/60">
+                    select weight
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 text-[11px]">
+                    {(
+                      [
+                        ["1 oz", p.prices.oz, "oz"],
+                        ["1/4 lb", p.prices.quarter, "quarter"],
+                        ["1/2 lb", p.prices.half, "half"],
+                        ["1 lb", p.prices.pound, "pound"],
+                      ] as const
+                    ).map(([label, value, weight]) => (
+                      <Link
+                        key={weight}
+                        to="/cart"
+                        search={{ item: p.id, weight }}
+                        className="rounded-2xl border border-border px-3 py-2 text-left text-[11px] transition hover:border-accent hover:text-accent"
+                        aria-label={`Buy ${p.name} ${label} for $${value.toFixed(2)}`}
+                      >
+                        <span className="block font-semibold">{label}</span>
+                        <span className="font-mono-ui text-xs">${value.toFixed(2)}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-6 flex items-end justify-between">
+                  <p className="font-mono-ui text-[10px] uppercase text-muted-foreground/60">
+                    qty · 1
+                  </p>
+                  <Link
+                    to="/cart"
+                    search={{ item: p.id }}
+                    data-text={`$${p.price.toFixed(2)}`}
+                    className="glitch-btn text-xs"
+                    aria-label={`Buy ${p.name} for $${p.price.toFixed(2)}`}
+                  >
+                    ${p.price.toFixed(2)}
+                  </Link>
+                </div>
+              )}
             </div>
           </article>
         ))}
