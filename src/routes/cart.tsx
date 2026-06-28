@@ -196,7 +196,7 @@ function CartPage() {
                 <select
                   value={strain}
                   onChange={(e) => setStrain(e.target.value)}
-                  className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm text-foreground outline-none transition focus:border-accent"
+                  className="mt-2 w-full border-b border-border bg-card/60 py-2 text-sm text-foreground outline-none transition focus:border-accent focus:bg-card/60"
                 >
                   {STRAIN_OPTIONS.map((option) => (
                     <option key={option} value={option}>
@@ -216,7 +216,7 @@ function CartPage() {
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="shipping, special requests..."
-                className="mt-2 w-full resize-none border-b border-border bg-transparent py-2 text-sm text-foreground outline-none transition focus:border-accent"
+                className="mt-2 w-full resize-none border-b border-border bg-card/60 py-2 text-sm text-foreground outline-none transition focus:border-accent focus:bg-card/60"
               />
             </div>
 
@@ -271,7 +271,7 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         required={required}
         placeholder={placeholder}
-        className="mt-2 w-full border-b border-border bg-transparent py-2 text-sm text-foreground outline-none transition focus:border-accent"
+        className="mt-2 w-full border-b border-border bg-card/60 py-2 text-sm text-foreground outline-none transition focus:border-accent focus:bg-card/60"
       />
     </div>
   );
