@@ -93,6 +93,7 @@ export const PRODUCTS: Product[] = [
     price: 44.9,
     image: IMG_7969,
   },
+  /*
   {
     id: "MW-014",
     code: "MW-014",
@@ -101,6 +102,7 @@ export const PRODUCTS: Product[] = [
     price: 52.0,
     image: IMG_7967,
   },
+  
   {
     id: "MW-015",
     code: "MW-015",
@@ -109,6 +111,7 @@ export const PRODUCTS: Product[] = [
     price: 46.25,
     image: IMG_7967_1,
   },
+  */
   {
     id: "MW-016",
     code: "MW-016",
@@ -141,6 +144,7 @@ export const PRODUCTS: Product[] = [
     price: 47.75,
     image: IMG_7973,
   },
+  /*
   {
     id: "MW-020",
     code: "MW-020",
@@ -173,6 +177,7 @@ export const PRODUCTS: Product[] = [
     price: 40.75,
     image: IMG_7972,
   },
+  */
   {
     id: "MW-024",
     code: "MW-024",
@@ -189,6 +194,7 @@ export const PRODUCTS: Product[] = [
     price: 44.2,
     image: IMG_7977,
   },
+  /*
   {
     id: "MW-026",
     code: "MW-026",
@@ -213,6 +219,7 @@ export const PRODUCTS: Product[] = [
     price: 42.8,
     image: IMG_7977,
   },
+  */
   {
     id: "MW-029",
     code: "MW-029",
