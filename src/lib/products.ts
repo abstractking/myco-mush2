@@ -72,10 +72,10 @@ export const PRODUCTS: Product[] = [
   {
     id: "MW-011",
     code: "MW-011",
-    name: "Neon Veil",
+    name: "DreamMayTrust",
     tag: "clarity",
     price: 48.0,
-    image: IMG_7963,
+    image: IMG_7964,
   },
   {
     id: "MW-012",
@@ -83,7 +83,7 @@ export const PRODUCTS: Product[] = [
     name: "Astral Tonic",
     tag: "energy",
     price: 39.75,
-    image: IMG_7964,
+    image: IMG_7968,
   },
   {
     id: "MW-013",
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: "Void Dust",
     tag: "calm",
     price: 44.9,
-    image: IMG_7965,
+    image: IMG_7969,
   },
   {
     id: "MW-014",
@@ -131,7 +131,7 @@ export const PRODUCTS: Product[] = [
     name: "Mycel Shroud",
     tag: "calm",
     price: 54.0,
-    image: IMG_7969_1,
+    image: IMG_7972,
   },
   {
     id: "MW-019",
@@ -139,7 +139,7 @@ export const PRODUCTS: Product[] = [
     name: "Wraith Husk",
     tag: "sleep",
     price: 47.75,
-    image: IMG_7970,
+    image: IMG_7973,
   },
   {
     id: "MW-020",
@@ -179,7 +179,7 @@ export const PRODUCTS: Product[] = [
     name: "Drift Veil",
     tag: "calm",
     price: 55.0,
-    image: IMG_7973,
+    image: IMG_7976,
   },
   {
     id: "MW-025",
@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     name: "Vapor Tonic",
     tag: "sleep",
     price: 44.2,
-    image: IMG_7974,
+    image: IMG_7977,
   },
   {
     id: "MW-026",
