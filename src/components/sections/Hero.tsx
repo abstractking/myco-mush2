@@ -36,9 +36,7 @@ export function Hero() {
           </span>
         </h1>
         <p className="mt-6 max-w-2xl text-balance text-base text-muted-foreground md:text-lg">
-          Abstract illusion-inspired blends of functional mushrooms and adaptogenic
-          herbs. Lab-tested rituals for focus, calm, immunity, and energy —
-          rendered in neon, brewed with care.
+          
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <a
