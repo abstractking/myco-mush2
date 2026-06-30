@@ -1,10 +1,10 @@
 const items = [
   "Lab-tested",
   "Organic",
-  "Vegan",
+  "Shrmmz",
   "Third-party verified",
-  "Wild-harvested",
-  "Small batch",
+  "LSD/DMT",
+  "Small batch/Bulk",
   "No fillers",
 ];
 
