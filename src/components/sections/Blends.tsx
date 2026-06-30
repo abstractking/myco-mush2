@@ -4,23 +4,23 @@ import { SectionLabel } from "./SectionLabel";
 const blends = [
   {
     code: "MW-01",
-    name: "Lion's Mane",
-    tag: "Focus // Clarity",
-    desc: "Smooth cognitive lift for deep work and creative flow. Dual-extracted fruiting body, 30% beta-glucans.",
+    name: "Psych",
+    tag: "TrippyGoodness",
+    desc: "Contact For Specs",
     accent: "from-amber to-primary",
   },
   {
     code: "MW-02",
-    name: "Reishi",
-    tag: "Calm // Sleep",
-    desc: "Adaptogenic stillness. Wind down without fog. Red reishi paired with ashwagandha and chamomile.",
+    name: "420MG",
+    tag: "Yummy420",
+    desc: "Contact For Specs",
     accent: "from-primary to-secondary",
   },
   {
     code: "MW-03",
-    name: "Cordyceps",
-    tag: "Energy // Stamina",
-    desc: "Caffeine-free oxygen lift for training and altitude. Wild-strain CS-4 with rhodiola and eleuthero.",
+    name: "Custom Ritual",
+    tag: "If it's not listed, we can find it.",
+    desc: "Contact For Custom",
     accent: "from-secondary to-accent",
   },
 ];

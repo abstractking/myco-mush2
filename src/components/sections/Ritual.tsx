@@ -3,18 +3,18 @@ import { SectionLabel } from "./SectionLabel";
 const steps = [
   {
     n: "01",
-    h: "Choose your blend",
-    p: "Pick by intention — focus, calm, immunity, or energy. Or build a stack from all four.",
+    h: "Choose your Calduron",
+    p: "Pick with intention.",
   },
   {
     n: "02",
     h: "Brew the ritual",
-    p: "One scoop in hot water, coffee, or smoothie. Earthy, smooth, faintly sweet.",
+    p: "Load Up Your Bag!",
   },
   {
     n: "03",
-    h: "Receive the signal",
-    p: "Most feel it inside a week. Stack daily for compounding adaptogenic effects.",
+    h: "Send your signal",
+    p: "Await, your order & compound!",
   },
 ];
 
@@ -24,7 +24,7 @@ export function Ritual() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionLabel index="03" label="How to use" />
         <h2 className="font-display mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
-          A three-step <span className="text-primary text-glow">daily ritual.</span>
+          A three-step <span className="text-primary text-glow">ReUp ritual.</span>
         </h2>
         <ol className="mt-16 grid gap-10 md:grid-cols-3">
           {steps.map((s, i) => (
