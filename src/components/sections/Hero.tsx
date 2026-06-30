@@ -27,10 +27,10 @@ export function Hero() {
       </Suspense>
       <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col items-center justify-end px-6 pb-20 pt-32 text-center md:pb-28">
         <p className="font-mono-ui mb-6 text-xs uppercase text-accent text-glow-cyan">
-          {"> myco wonderland // healing"}
+          {}
         </p>
         <h1 className="font-display text-[clamp(2.5rem,8vw,6.5rem)] font-extrabold leading-[0.95] tracking-tight">
-          <span className="block text-foreground">All-natural.</span>
+          <span className="block text-foreground"></span>
           <span className="block bg-gradient-to-r from-amber via-primary to-secondary bg-clip-text text-transparent text-glow">
             Otherworldly potent.
           </span>

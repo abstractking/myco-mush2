@@ -74,23 +74,23 @@ export const PRODUCTS: Product[] = [
     code: "MW-011",
     name: "DreamMayTrust",
     tag: "clarity",
-    price: 48.0,
+    price: 60,
     image: IMG_7964,
   },
   {
     id: "MW-012",
     code: "MW-012",
-    name: "Astral Tonic",
+    name: "Micro-Shrmmz",
     tag: "energy",
-    price: 39.75,
+    price: 6,
     image: IMG_7968,
   },
   {
     id: "MW-013",
     code: "MW-013",
-    name: "Void Dust",
+    name: "600mg",
     tag: "calm",
-    price: 44.9,
+    price: 15,
     image: IMG_7969,
   },
   /*
@@ -112,6 +112,7 @@ export const PRODUCTS: Product[] = [
     image: IMG_7967_1,
   },
   */
+ /*
   {
     id: "MW-016",
     code: "MW-016",
@@ -128,6 +129,7 @@ export const PRODUCTS: Product[] = [
     price: 38.99,
     image: IMG_7969,
   },
+  */
   {
     id: "MW-018",
     code: "MW-018",
@@ -219,7 +221,7 @@ export const PRODUCTS: Product[] = [
     price: 42.8,
     image: IMG_7977,
   },
-  */
+  
   {
     id: "MW-029",
     code: "MW-029",
@@ -228,6 +230,7 @@ export const PRODUCTS: Product[] = [
     price: 53.6,
     image: IMG_7978,
   },
+  */
 ];
 
 export function getProduct(id: string) {
