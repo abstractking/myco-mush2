@@ -2,19 +2,19 @@ import { SectionLabel } from "./SectionLabel";
 
 const quotes = [
   {
-    q: "The Lion's Mane is the first nootropic that actually feels like a soft handshake with my brain. No jitters, just signal.",
-    a: "Iris K.",
-    r: "Designer, Brooklyn",
+    q: "Overnight box landed, like butterrrr.",
+    a: "Iris.",
+    r: "Brooklyn",
   },
   {
-    q: "Reishi before bed has replaced two glasses of wine. Sleep is deeper, mornings are kinder.",
-    a: "Marcus T.",
-    r: "Producer, LA",
+    q: "Yeah no wonder y'all touchdowns rate so crazy, double box with the foil!",
+    a: "Marcus",
+    r: "LA",
   },
   {
-    q: "Cordyceps got me through a half-marathon without coffee. The packaging alone is worth framing.",
-    a: "Anya R.",
-    r: "Runner, Berlin",
+    q: "TD! Just sent two of my homeboys your way.",
+    a: "DJ",
+    r: "D.C.",
   },
 ];
 

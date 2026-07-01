@@ -4,7 +4,7 @@ import { z } from "zod";
 import { getProduct, PRODUCTS } from "@/lib/products";
 
 // TODO: replace with real values when ready.
-const BTC_PAYMENT_ADDRESS = "REPLACE_WITH_OWNER_BTC_ADDRESS";
+const BTC_PAYMENT_ADDRESS = "bc1q7jf82z4wqt50gwmueqjalfygkfa3tqxz6elq6r";
 const OWNER_EMAIL = "mycowondarland@gmail.com";
 
 type Weight = "oz" | "quarter" | "half" | "pound";
