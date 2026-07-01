@@ -1,4 +1,4 @@
-import IMG_7977 from "@/assets/IMG_7977.jpeg";
+import IMG_7977 from "@/assets/product-cards/IMG_7977.jpeg";
 import { SectionLabel } from "./SectionLabel";
 
 export function Story() {
