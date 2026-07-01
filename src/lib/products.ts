@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     name: "600mg",
     tag: "calm",
     price: 15,
-    image: IMG_7969,
+    image: IMG_7971,
   },
   /*
   {
