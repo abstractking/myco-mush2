@@ -1,4 +1,4 @@
-import cyanGrid from "@/assets/cyan-grid.png.asset.json";
+import IMG_7977 from "@/assets/IMG_7977.jpeg";
 import { SectionLabel } from "./SectionLabel";
 
 export function Story() {
@@ -29,7 +29,7 @@ export function Story() {
           />
           <div className="relative overflow-hidden rounded-3xl border border-accent/40 shadow-glow-cyan">
             <img
-              src={cyanGrid.url}
+              src={IMG_7977}
               alt="Abstract cyan grid art — neon architectural illusion"
               loading="lazy"
               decoding="async"
