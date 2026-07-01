@@ -133,9 +133,9 @@ export const PRODUCTS: Product[] = [
   {
     id: "MW-018",
     code: "MW-018",
-    name: "Mycel Shroud",
+    name: "ChocoMush",
     tag: "calm",
-    price: 54.0,
+    price: 30.0,
     image: IMG_7972,
   },
   {
@@ -183,17 +183,17 @@ export const PRODUCTS: Product[] = [
   {
     id: "MW-024",
     code: "MW-024",
-    name: "Drift Veil",
-    tag: "calm",
-    price: 55.0,
+    name: "Waxx",
+    tag: "1g 4 65",
+    price: 65.0,
     image: IMG_7976,
   },
   {
     id: "MW-025",
     code: "MW-025",
     name: "Vapor Tonic",
-    tag: "sleep",
-    price: 44.2,
+    tag: "25 4 60",
+    price: 60.0,
     image: IMG_7977,
   },
   /*

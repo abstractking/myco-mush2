@@ -1,10 +1,10 @@
 import { SectionLabel } from "./SectionLabel";
 
 const items = [
-  { k: "Focus", v: "Cognitive precision without the crash. Sharper signal, quieter noise." },
-  { k: "Calm", v: "Adaptogenic balance for the nervous system. Lower cortisol, deeper rest." },
-  { k: "Immunity", v: "Beta-glucan rich blends that train and support immune intelligence." },
-  { k: "Energy", v: "Clean cellular fuel from cordyceps and rhodiola. No jitters, no comedown." },
+  { k: "Focus", v: "The Signal in the Static.Precision without the crash. In the experimental landscape, this is the cognitive tool that allows you to observe the 'otherworldly' architectures of your mind with clarity, turning chaotic noise into navigable insight" },
+  { k: "Calm", v: "The Deep Rest. Balance for the nervous system. As you traverse the magical and whimsical terrains of the psyche, this acts as your anchor—lowering cortisol to ensure the journey remains a healing exploration, not a turbulent storm." },
+  { k: "Immunity", v: "The Sacred Armor. Rich blends that train the body's intelligence. When you open the doors of perception, this fortification ensures the physical self is resilient, allowing the 'proven cognitive help' of LSD to be integrated safely into a robust, healing system." },
+  { k: "Energy", v: " The Celestial Fuel. A sustained, gentle current of power that mimics the boundless energy of the Canadian wilderness. No jitters, no comedown—just a magical, sustained presence for the duration of your healing arc." },
 ];
 
 export function Benefits() {
