@@ -59,19 +59,26 @@ function CartPage() {
   const total = (unitPrice * qty).toFixed(2);
 
   const orderSummary = [
-    `Order: ${selectedProduct.code} — ${selectedProduct.name}`,
-    `Qty: ${qty}`,
-    `Unit: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
+    `Subject: New Order ${selectedProduct.code}`,
+    ``,
+    `Hello Myco Wonderland,`,
+    ``,
+    `A new order has been submitted.`,
+    ``,
+    `Order Number: ${selectedProduct.code}`,
+    `Product: ${selectedProduct.name}`,
+    `Quantity: ${qty}`,
+    `Unit Price: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
     `Total: $${total}`,
     ...(hasStrainOptions ? [`Strain: ${strain}`] : []),
+    `Customer Email: ${email || "Not provided"}`,
+    `Customer BTC Address: ${buyerBtc || "Not provided"}`,
+    `Payment To: ${BTC_PAYMENT_ADDRESS}`,
+    `Notes: ${notes || "None"}`,
     ``,
-    `Customer email: ${email}`,
-    `Customer BTC (tracking): ${buyerBtc}`,
+    `Submitted from: ${typeof window !== "undefined" ? window.location.href : "https://yourwebsite.com"}`,
     ``,
-    `Payment to: ${BTC_PAYMENT_ADDRESS}`,
-    ``,
-    `Notes:`,
-    notes,
+    `-- Website Order System`,
   ].join("\n");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

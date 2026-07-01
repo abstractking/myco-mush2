@@ -142,8 +142,8 @@ export const PRODUCTS: Product[] = [
     id: "MW-019",
     code: "MW-019",
     name: "Wraith Husk",
-    tag: "sleep",
-    price: 47.75,
+    tag: "1 4 20",
+    price: 20,
     image: IMG_7973,
   },
   /*
