@@ -8,6 +8,8 @@ const BTC_PAYMENT_ADDRESS = "bc1q7jf82z4wqt50gwmueqjalfygkfa3tqxz6elq6r";
 const OWNER_EMAIL = "mycowondarland@gmail.com";
 const CASHAPP_INSTRUCTIONS =
   "Owner will reply with their $Cashtag. Do not send payment until owner provides the $Cashtag.";
+const APPLEPAY_INSTRUCTIONS =
+  "Owner will reply with their Apple Pay recipient info. Do not send payment until owner provides it.";
 
 type Weight = "oz" | "quarter" | "half" | "pound";
 
@@ -56,7 +58,7 @@ function CartPage() {
   const [buyerBtc, setBuyerBtc] = useState("");
   const [notes, setNotes] = useState("");
   const [strain, setStrain] = useState(STRAIN_OPTIONS[0]);
-  const [paymentMethod, setPaymentMethod] = useState<"btc" | "cashapp">("btc");
+  const [paymentMethod, setPaymentMethod] = useState<"btc" | "cashapp" | "applepay">("btc");
   const hasStrainOptions = Boolean(selectedProduct.prices);
 
   const total = (unitPrice * qty).toFixed(2);
@@ -69,7 +71,9 @@ function CartPage() {
     `A new order has been submitted.`,
     ``,
     `Order Number: ${selectedProduct.code}`,
-    `Payment Method: ${paymentMethod === "btc" ? "BTC" : "Cash App (request)"}`,
+    `Payment Method: ${
+      paymentMethod === "btc" ? "BTC" : paymentMethod === "cashapp" ? "Cash App (request)" : "Apple Pay (request)"
+    }`,
     `Product: ${selectedProduct.name}`,
     `Quantity: ${qty}`,
     `Unit Price: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
@@ -79,7 +83,9 @@ function CartPage() {
     `Customer BTC Address: ${paymentMethod === "btc" ? buyerBtc || "Not provided" : "N/A"}`,
     ...(paymentMethod === "btc"
       ? [`Payment To: ${BTC_PAYMENT_ADDRESS}`]
-      : [`Payment Requested Via: Cash App`, `${CASHAPP_INSTRUCTIONS}`]),
+      : paymentMethod === "cashapp"
+      ? [`Payment Requested Via: Cash App`, `${CASHAPP_INSTRUCTIONS}`]
+      : [`Payment Requested Via: Apple Pay`, `${APPLEPAY_INSTRUCTIONS}`]),
     `Notes: ${notes || "None"}`,
     ``,
     `Submitted from: ${typeof window !== "undefined" ? window.location.href : "https://yourwebsite.com"}`,
@@ -89,7 +95,8 @@ function CartPage() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subjectPrefix = paymentMethod === "cashapp" ? "[CASHAPP REQUEST] " : "";
+    const subjectPrefix =
+      paymentMethod === "cashapp" ? "[CASHAPP REQUEST] " : paymentMethod === "applepay" ? "[APPLE PAY REQUEST] " : "";
     const subject = `${subjectPrefix}New order // ${selectedProduct.code} — ${selectedProduct.name}`;
     window.location.href = `mailto:${OWNER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(orderSummary)}`;
   };
@@ -179,12 +186,27 @@ function CartPage() {
                   copy address ↗
                 </button>
               </div>
-            ) : (
+            ) : paymentMethod === "cashapp" ? (
               <div className="space-y-2 rounded-lg border border-primary/40 bg-primary/5 p-4">
                 <p className="font-mono-ui text-[10px] uppercase text-primary">
                   {"> request payment (cash app)"}
                 </p>
                 <p className="text-[11px] leading-relaxed text-foreground">{CASHAPP_INSTRUCTIONS}</p>
+                <p className="text-[10px] uppercase text-muted-foreground">Owner will reply to: {OWNER_EMAIL}</p>
+                <button
+                  type="button"
+                  onClick={() => copy(OWNER_EMAIL)}
+                  className="font-mono-ui text-[10px] uppercase text-accent hover:text-glow-cyan"
+                >
+                  copy owner email ↗
+                </button>
+              </div>
+            ) : (
+              <div className="space-y-2 rounded-lg border border-primary/40 bg-primary/5 p-4">
+                <p className="font-mono-ui text-[10px] uppercase text-primary">
+                  {"> request payment (apple pay)"}
+                </p>
+                <p className="text-[11px] leading-relaxed text-foreground">{APPLEPAY_INSTRUCTIONS}</p>
                 <p className="text-[10px] uppercase text-muted-foreground">Owner will reply to: {OWNER_EMAIL}</p>
                 <button
                   type="button"
@@ -221,6 +243,14 @@ function CartPage() {
                 >
                   Cash App
                 </button>
+                <button
+                  type="button"
+                  onClick={() => setPaymentMethod("applepay")}
+                  aria-pressed={paymentMethod === "applepay"}
+                  className={`neon-option neon-scan-hover ${paymentMethod === "applepay" ? "neon-selected" : ""}`}
+                >
+                  Apple Pay
+                </button>
               </div>
             </div>
             <Field
@@ -240,9 +270,13 @@ function CartPage() {
                 required
                 placeholder="bc1q..."
               />
-            ) : (
+            ) : paymentMethod === "cashapp" ? (
               <div className="text-[11px] text-muted-foreground">
                 Owner will reply with their Cash App $Cashtag — no Cash App handle required from you now.
+              </div>
+            ) : (
+              <div className="text-[11px] text-muted-foreground">
+                Owner will reply with their Apple Pay recipient info — no Apple Pay handle required from you now.
               </div>
             )}
 
