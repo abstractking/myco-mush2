@@ -208,14 +208,16 @@ function CartPage() {
                 <button
                   type="button"
                   onClick={() => setPaymentMethod("btc")}
-                  className={`font-mono-ui size-8 rounded border border-border hover:border-accent hover:text-accent ${paymentMethod === "btc" ? "border-accent text-accent" : ""}`}
+                  aria-pressed={paymentMethod === "btc"}
+                  className={`neon-option neon-scan-hover ${paymentMethod === "btc" ? "neon-selected" : ""}`}
                 >
                   BTC
                 </button>
                 <button
                   type="button"
                   onClick={() => setPaymentMethod("cashapp")}
-                  className={`font-mono-ui size-8 rounded border border-border hover:border-accent hover:text-accent ${paymentMethod === "cashapp" ? "border-accent text-accent" : ""}`}
+                  aria-pressed={paymentMethod === "cashapp"}
+                  className={`neon-option neon-scan-hover ${paymentMethod === "cashapp" ? "neon-selected" : ""}`}
                 >
                   Cash App
                 </button>
