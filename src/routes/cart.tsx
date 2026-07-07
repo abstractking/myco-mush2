@@ -56,6 +56,8 @@ function CartPage() {
   const [qty, setQty] = useState(1);
   const [email, setEmail] = useState("");
   const [buyerBtc, setBuyerBtc] = useState("");
+  const [shippingAddress, setShippingAddress] = useState("");
+  const [shippingCarrier, setShippingCarrier] = useState<"fedex" | "usps" | "ups">("fedex");
   const [notes, setNotes] = useState("");
   const [strain, setStrain] = useState(STRAIN_OPTIONS[0]);
   const [paymentMethod, setPaymentMethod] = useState<"btc" | "cashapp" | "applepay">("btc");
@@ -86,6 +88,8 @@ function CartPage() {
       : paymentMethod === "cashapp"
       ? [`Payment Requested Via: Cash App`, `${CASHAPP_INSTRUCTIONS}`]
       : [`Payment Requested Via: Apple Pay`, `${APPLEPAY_INSTRUCTIONS}`]),
+    `Shipping Address: ${shippingAddress || "Not provided"}`,
+    `Shipping Carrier: ${shippingCarrier === "fedex" ? "FedEx" : shippingCarrier === "usps" ? "USPS" : "UPS"}`,
     `Notes: ${notes || "None"}`,
     ``,
     `Submitted from: ${typeof window !== "undefined" ? window.location.href : "https://yourwebsite.com"}`,
@@ -298,6 +302,34 @@ function CartPage() {
                 </select>
               </div>
             ) : null}
+
+            <Field
+              label="> shipping address:"
+              value={shippingAddress}
+              onChange={setShippingAddress}
+              placeholder="123 Neon Lane, City, State"
+            />
+
+            <div>
+              <label className="block text-xs uppercase text-muted-foreground">{"> shipping carrier:"}</label>
+              <div className="mt-2 flex flex-wrap gap-3">
+                {[
+                  { id: "fedex", label: "FedEx" },
+                  { id: "usps", label: "USPS" },
+                  { id: "ups", label: "UPS" },
+                ].map((carrier) => (
+                  <button
+                    key={carrier.id}
+                    type="button"
+                    onClick={() => setShippingCarrier(carrier.id as "fedex" | "usps" | "ups")}
+                    aria-pressed={shippingCarrier === carrier.id}
+                    className={`neon-option neon-scan-hover ${shippingCarrier === carrier.id ? "neon-selected" : ""}`}
+                  >
+                    {carrier.label}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             <div>
               <label className="block text-xs uppercase text-muted-foreground">
