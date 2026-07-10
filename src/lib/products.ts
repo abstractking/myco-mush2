@@ -18,6 +18,7 @@ import IMG_7975 from "@/assets/product-cards/IMG_7975.jpeg";
 import IMG_7976 from "@/assets/product-cards/IMG_7976.jpeg";
 import IMG_7977 from "@/assets/product-cards/IMG_7977.jpeg";
 import IMG_7978 from "@/assets/product-cards/IMG_7978.jpeg";
+import PHOTO_5080097222363385475_Y_1 from "@/assets/product-cards/photo_5080097222363385475_y (1).jpg";
 
 export type PriceBreakdown = {
   oz: number;
@@ -100,7 +101,7 @@ export const PRODUCTS: Product[] = [
     name: "Fsion Brz",
     tag: "trippy",
     price: 30.0,
-    image: IMG_7967,
+    image: PHOTO_5080097222363385475_Y_1,
   },
   
   {
@@ -109,7 +110,7 @@ export const PRODUCTS: Product[] = [
     name: "Gel",
     tag: "immunity",
     price: 46.25,
-    image: IMG_7967_1,
+    image: PHOTO_5080097222363385477_Y_1,
   },
 
   {
@@ -118,7 +119,7 @@ export const PRODUCTS: Product[] = [
     name: "Plka Brz",
     tag: "brz",
     price: 35.0,
-    image: IMG_7968,
+    image: PHOTO_5080097222363385480_Y_1,
   },
   {
     id: "MW-017",
@@ -126,7 +127,7 @@ export const PRODUCTS: Product[] = [
     name: "Sporzz",
     tag: "clarity",
     price: 15.00,
-    image: IMG_7969,
+    image: PHOTO_5080097222363385482_Y_1,
   },
   
   {
