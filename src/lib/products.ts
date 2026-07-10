@@ -144,7 +144,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "MW-019",
     code: "MW-019",
-    name: "Wraith Husk",
+    name: "Plka Wx",
     tag: "1 4 20",
     price: 20,
     image: IMG_7973,
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "MW-025",
     code: "MW-025",
-    name: "Vapor Tonic",
+    name: "LuLuv",
     tag: "25 4 60",
     price: 60.0,
     image: IMG_7977,
