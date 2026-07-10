@@ -93,43 +93,42 @@ export const PRODUCTS: Product[] = [
     price: 15,
     image: IMG_7971,
   },
-  /*
+  
   {
     id: "MW-014",
     code: "MW-014",
-    name: "Lucid Crown",
-    tag: "sleep",
-    price: 52.0,
+    name: "Fsion Brz",
+    tag: "trippy",
+    price: 30.0,
     image: IMG_7967,
   },
   
   {
     id: "MW-015",
     code: "MW-015",
-    name: "Solar Resin",
+    name: "Gel",
     tag: "immunity",
     price: 46.25,
     image: IMG_7967_1,
   },
-  */
- /*
+
   {
     id: "MW-016",
     code: "MW-016",
-    name: "Ember Spire",
-    tag: "focus",
-    price: 41.5,
+    name: "Plka Brz",
+    tag: "brz",
+    price: 35.0,
     image: IMG_7968,
   },
   {
     id: "MW-017",
     code: "MW-017",
-    name: "Glyph Mist",
+    name: "Sporzz",
     tag: "clarity",
-    price: 38.99,
+    price: 15.00,
     image: IMG_7969,
   },
-  */
+  
   {
     id: "MW-018",
     code: "MW-018",
