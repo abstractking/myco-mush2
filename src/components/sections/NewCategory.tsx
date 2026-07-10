@@ -1,4 +1,4 @@
-import IMG_7977 from "@/assets/product-cards/IMG_7977.jpeg";
+import PHOTO_5080097222363385511_y from "@/assets/product-cards/photo_5080097222363385511_y.jpg";
 import { SectionLabel } from "./SectionLabel";
 
 export function NewCategory() {
@@ -35,7 +35,7 @@ export function NewCategory() {
           />
           <div className="relative overflow-hidden rounded-3xl border border-accent/40 shadow-glow-cyan">
             <img
-              src={IMG_7977}
+              src={PHOTO_5080097222363385511_y}
               alt="Abstract cyan grid art — neon architectural illusion"
               loading="lazy"
               decoding="async"
