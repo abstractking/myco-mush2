@@ -22,7 +22,7 @@ export function Testimonials() {
   return (
     <section className="relative py-28">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionLabel index="05" label="Field reports" />
+        <SectionLabel index="06" label="Field reports" />
         <h2 className="font-display mt-4 max-w-3xl text-4xl font-bold leading-tight md:text-6xl">
           Signals from the <span className="text-secondary text-glow">wonderland.</span>
         </h2>

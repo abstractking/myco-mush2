@@ -6,7 +6,7 @@ export function Contact() {
   return (
     <section id="contact" className="relative py-28">
       <div className="mx-auto max-w-4xl px-6">
-        <SectionLabel index="06" label="Open a channel" />
+        <SectionLabel index="07" label="Open a channel" />
         <h2 className="font-display mt-4 text-4xl font-bold leading-tight md:text-6xl">
           Let&apos;s build your <span className="text-primary text-glow">ritual.</span>
         </h2>

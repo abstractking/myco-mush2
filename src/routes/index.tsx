@@ -7,6 +7,7 @@ import { Blends } from "@/components/sections/Blends";
 import { Benefits } from "@/components/sections/Benefits";
 import { Ritual } from "@/components/sections/Ritual";
 import { Story } from "@/components/sections/Story";
+import { NewCategory } from "@/components/sections/NewCategory";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -38,6 +39,7 @@ function Index() {
         <Benefits />
         <Ritual />
         <Story />
+        <NewCategory />
         <Testimonials />
         <Contact />
       </main>
