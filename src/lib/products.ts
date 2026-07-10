@@ -19,6 +19,9 @@ import IMG_7976 from "@/assets/product-cards/IMG_7976.jpeg";
 import IMG_7977 from "@/assets/product-cards/IMG_7977.jpeg";
 import IMG_7978 from "@/assets/product-cards/IMG_7978.jpeg";
 import PHOTO_5080097222363385475_Y_1 from "@/assets/product-cards/photo_5080097222363385475_y (1).jpg";
+import PHOTO_5080097222363385477_Y_1 from "@/assets/product-cards/photo_5080097222363385477_y (1).jpg";
+import PHOTO_5080097222363385480_Y_1 from "@/assets/product-cards/photo_5080097222363385480_y (1).jpg";
+import PHOTO_5080097222363385482_Y_1 from "@/assets/product-cards/photo_5080097222363385482_y (2).jpg";
 
 export type PriceBreakdown = {
   oz: number;
