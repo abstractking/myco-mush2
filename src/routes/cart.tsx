@@ -35,6 +35,11 @@ const STRAIN_OPTIONS = [
   "Bluey Vuitton",
   "Yeti",
  ];
+
+const SHIPPING_OPTIONS = [
+  { id: "standard" as const, label: "Standard shipping: 2-3days", fee: 15 },
+  { id: "overnight" as const, label: "Overnight shipping: 24hrs", fee: 25 },
+];
 export const Route = createFileRoute("/cart")({
   validateSearch: searchSchema,
   head: () => ({
@@ -61,10 +66,12 @@ function CartPage() {
   const [notes, setNotes] = useState("");
   const [strain, setStrain] = useState(STRAIN_OPTIONS[0]);
   const [paymentMethod, setPaymentMethod] = useState<"btc" | "cashapp" | "applepay">("btc");
+  const [shippingSpeed, setShippingSpeed] = useState<"standard" | "overnight">("standard");
   const hasStrainOptions = Boolean(selectedProduct.prices);
+  const shippingFee = SHIPPING_OPTIONS.find((o) => o.id === shippingSpeed)!.fee;
+  const total = (unitPrice * qty + shippingFee).toFixed(2);
 
-  const total = (unitPrice * qty).toFixed(2);
-
+  const shippingOption = SHIPPING_OPTIONS.find((o) => o.id === shippingSpeed)!;
   const orderSummary = [
     `Subject: New Order ${selectedProduct.code}`,
     ``,
@@ -79,6 +86,7 @@ function CartPage() {
     `Product: ${selectedProduct.name}`,
     `Quantity: ${qty}`,
     `Unit Price: $${unitPrice.toFixed(2)}${selectedWeight ? ` (${selectedWeight})` : ""}`,
+    `Shipping: ${shippingOption.label} — $${shippingOption.fee}`,
     `Total: $${total}`,
     ...(hasStrainOptions ? [`Strain: ${strain}`] : []),
     `Customer Email: ${email || "Not provided"}`,
@@ -221,7 +229,22 @@ function CartPage() {
                 </button>
               </div>
             )}
-          </aside>
+            <div>
+              <label className="block text-xs uppercase text-muted-foreground">{">  shipping speed:"}</label>
+              <div className="mt-2 flex flex-wrap gap-3">
+                {SHIPPING_OPTIONS.map((option) => (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => setShippingSpeed(option.id)}
+                    aria-pressed={shippingSpeed === option.id}
+                    className={`neon-option neon-scan-hover ${shippingSpeed === option.id ? "neon-selected" : ""}`}
+                  >
+                    {option.label} • ${option.fee}
+                  </button>
+                ))}
+              </div>
+            </div>          </aside>
 
           {/* Form */}
           <form
